@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <div class="container-fluid p-2 border-bottom">
-        <div class="row pt-2">
+    <div class="container p-2 border-bottom">
+        <div class="row">
             <!-- Title -->
-            <h1 class="text-center border-bottom p-2">Cube Game</h1>
+            <h1 class="text-center border-bottom">Cube Game</h1>
             <!-- Form -->
             <div class="form-floating mb-3 pt-2" id="cubesLabel">
                 <input type="text" class="form-control" id="cubeValue" placeholder="name@example.com">
@@ -28,14 +28,14 @@
                 <input type="text" class="form-control" id="kValue" placeholder="name@example.com">
                 <label for="kValue">Value for the K? (Default: 4 cubes)</label>
             </div>
-            <div class="mb-3">
+            <div>
                 <select class="form-select" aria-label="Default select example" id="selectPlayer">
                     <option selected value="1">Computer</option>
                     <option value="2">Human</option>
                 </select>
             </div>
         </div>
-        <div class="row border-bottom pb-3">
+        <div class="row border-bottom p-1 pb-2">
             <div class="col text-center">
                 <!-- Modal Button -->
                 <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -49,13 +49,18 @@
         </div>
         <!-- End Form -->
         <!-- Show the player that wins -->
-        <div class="row p-3">
-            <div class="col text-center">
-                <p class="fs-1 text-primary" id="gameStatus">Player Wins</p>
+        <div class="row p-3 text-center" id="gameStatus">
+            <div class="col">
+                <p class="fs-1 text-primary">Player Wins</p>
             </div>
         </div>
         <!-- Canvas p5.js -->
-        <div class="row p-2">
+        <div class="row" id="playerPlaying">
+            <div class="col text-center">
+                Player 1 is playing!
+            </div>
+        </div>
+        <div class="row p-1">
             <div class="col text-center">
                 <div id="canvasContainer"></div>
             </div>
@@ -73,27 +78,16 @@
                 </div>
                 <div class="modal-body">
                     <div class="col text-center">
-                        <h4>Πως παίζετε:</h4>
+                        <h4>How to Play:</h4>
                         <p>
-                            Έχουμε Ν κύβους στο τραπέζι (Μπορείτε να επιλέξετε εσείς το πλήθος στην αρχική) και έχετε το
-                            δικαίωμα να επιλέξετε από το τραπέζι 1 ή 2 ή Κ κύβους (το επιλέγετε από την αρχική ή αλλιως
-                            η τιμή
-                            του Κ είναι 4)
+                            We have N cubes on the table (You can choose the number at the form) and you can catch from the table 1 or 2 or K cubes (you choose the value of K at the form. Otherwise is 4)
                         </p>
                         <p>
-                            Επιλέγεις του κύβους του παιχνιδιού και για να ολοκληρώσετε την κίνηση σας θα πρέπει να
-                            πατήσετε το
-                            κουμπί catch κάτω αριστέρα
+                            To finish your round, you have to select a cube from the table and click the "Catch" button. 
                         </p>
-                        <h4>Πως θα νικήσετε:</h4>
+                        <h4 class="border-top pt-4">How to Win:</h4>
                         <p>
-                            Στόχος του παιχνιδιού είναι να τραβήξεις τους τελευταίους κύβους από το τραπέζι για να
-                            νικήσεις
-                        </p>
-                        <h5>Σημείσωση</h5>
-                        <p>
-                            *Σε περίπτωση που είστε από android κινητό θα χρειαστεί να έχετε πατημένο τον κύβο για να
-                            επιλεχθεί
+                            To win the game you have to catch the last cubes from the table
                         </p>
                     </div>
                 </div>

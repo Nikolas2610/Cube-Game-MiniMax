@@ -44,6 +44,7 @@ catchButton.addEventListener('click', () => {
 // Remove Elements From the Home Page
 document.getElementById('gameStatus').style.display = 'none';
 document.getElementById('catchButton').style.display = 'none';
+document.getElementById('playerPlaying').style.display = 'none';
 // Grid lines for debugging
 function lines() {
     let rect = width / 10;
@@ -93,6 +94,7 @@ submit.addEventListener('click', () => {
         document.getElementById('kLabel').style.display = 'none';
         document.getElementById('gameStatus').style.display = 'none';
         document.getElementById('catchButton').style.display = 'inline';
+        document.getElementById('playerPlaying').style.display = 'block';
         document.getElementById('submit').innerHTML = 'New Game';
         // Start the Game
         humanPlaying = true;
@@ -190,10 +192,12 @@ function checkWinner() {
         if (humanPlaying) {
             document.getElementById('gameStatus').innerHTML = "PLAYER WINS";
             document.getElementById('gameStatus').style.display = 'block';
+            document.getElementById('playerPlaying').style.display = 'none';
             return 'human';
         } else {
             document.getElementById('gameStatus').innerHTML = "COMPUTER WINS";
             document.getElementById('gameStatus').style.display = 'block';
+            document.getElementById('playerPlaying').style.display = 'none';
             return 'ai';
         }
     } else {
@@ -230,7 +234,7 @@ class Cube {
         fill(this.color);
         rect(this.x, this.y, this.width, this.width);
     }
-    
+
     clicked() {
         if (rectDistance(this.x, this.y, mouseX, mouseY)) {
             if (this.selected == false && selectedCubes < K) {
