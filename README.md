@@ -14,6 +14,3 @@ Home Page
 
 Game
 ![image](https://user-images.githubusercontent.com/64380802/179180457-1cb44e4a-0e9a-4491-9097-c7f46ab5c776.png)
-
-How to Play
-![image](https://user-images.githubusercontent.com/64380802/179180398-548d0de9-fc1d-40f0-b274-1c94fa0d9b70.png)
